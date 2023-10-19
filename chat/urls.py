@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import ChatList, ChatDetail, HomePage
+from .views import ChatListView, ChatDetailView, HomePageView, CreateChatView
 
 urlpatterns = [
-    path("", HomePage, name="home"),
-    path("chats/", ChatList, name="chat-list"),
-    path("chats/<int:chat_pk>/", ChatDetail, name="chat-detail"),
+    path("", HomePageView, name="home"),
+    path("chats/", ChatListView, name="chat-list"),
+    path("chats/<int:chat_pk>/", ChatDetailView, name="chat-detail"),
+    path("chats/create", CreateChatView, name="chat-create"),
 ]
