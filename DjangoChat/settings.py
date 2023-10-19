@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "accounts.apps.AccountsConfig",
+    "chat.apps.ChatConfig",
 ]
 
 MIDDLEWARE = [
@@ -93,7 +94,7 @@ ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 
 AUTH_USER_MODEL = "accounts.CustomUser"
 
-LOGIN_REDIRECT_URL = "home"
+LOGIN_REDIRECT_URL = "chat-list"
 ACCOUNT_LOGOUT_REDIRECT = "home"
 WSGI_APPLICATION = "DjangoChat.wsgi.application"
 
