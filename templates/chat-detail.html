@@ -1,14 +1,14 @@
+{% extends "base.html" %}
 {% block content %}
 
-<h1>{{chat.title}}</h1>
-<ul>
-    {% for message in chat.messages.all %}
-    <li>
-        {{message}}
-    </li>
-    {% endfor %}
-
-</ul>
+<h2>{{ chat.title }}</h2>
+<div hx-ws="connect:/chat/{{ chat.title }}/">
+    <form hx-ws="send:submit">
+        <input name="message">
+        <input type="submit">
+    </form>
+ </div>
+ <div id='messages'></div>
 
     
 

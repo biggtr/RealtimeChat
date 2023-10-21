@@ -36,7 +36,9 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "daphne",
     "django.contrib.staticfiles",
+    "channels",
     "allauth",
     "allauth.account",
     "accounts.apps.AccountsConfig",
@@ -96,6 +98,10 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 
 LOGIN_REDIRECT_URL = "chat-list"
 ACCOUNT_LOGOUT_REDIRECT = "home"
+
+
+# Server Configurations
+
 WSGI_APPLICATION = "DjangoChat.wsgi.application"
 
 
@@ -150,3 +156,6 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+ASGI_APPLICATION = "DjangoChat.routing.application"  # routing.py will be created later
+CHANNEL_LAYERS = {"default": {"BACKEND": "channels.layers.InMemoryChannelLayer"}}

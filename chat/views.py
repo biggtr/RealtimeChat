@@ -15,8 +15,8 @@ def ChatListView(request):
     return render(request, "chat-list.html", context={"chat_rooms": chat_rooms})
 
 
-def ChatDetailView(request, chat_pk):
-    chat = get_object_or_404(ChatRoom, pk=chat_pk)
+def ChatDetailView(request, room_title):
+    chat = get_object_or_404(ChatRoom, title=room_title)
 
     return render(request, "chat-detail.html", context={"chat": chat})
 

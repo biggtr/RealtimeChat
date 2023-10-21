@@ -6,6 +6,7 @@ from django.contrib.auth import get_user_model
 
 class ChatRoom(models.Model):
     title = models.CharField(max_length=50)
+    users = models.ManyToManyField(get_user_model())
 
     def __str__(self) -> str:
         return self.title
