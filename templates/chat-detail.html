@@ -2,7 +2,7 @@
 {% block content %}
 
 <h2>{{ chat.title }}</h2>
-<div hx-ws="connect:/chat/{{ chat.title }}/">
+<div hx-ws="connect:/chats/{{ chat.title }}/">
     <form hx-ws="send:submit">
         <input name="message">
         <input type="submit">
